@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF4F4"
+    android:orientation="vertical"
+    android:padding="18dp"
+    android:layoutDirection="rtl">
+
+    <TextView
+        android:id="@+id/titleText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="צ׳אט"
+        android:textColor="#7A1E2C"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:layout_marginBottom="12dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/refreshButton"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="רענון הודעות"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp"
+        app:backgroundTint="#E96F88"
+        app:cornerRadius="24dp"
+        android:layout_marginBottom="14dp" />
+
+    <ScrollView
+        android:id="@+id/messagesScroll"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/card_background"
+        android:padding="10dp"
+        android:fillViewport="true"
+        android:layout_marginBottom="14dp">
+
+        <LinearLayout
+            android:id="@+id/messagesContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp" />
+
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/messageRow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layoutDirection="ltr"
+        android:layout_marginBottom="12dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/sendButton"
+            android:layout_width="90dp"
+            android:layout_height="56dp"
+            android:text="שלח"
+            android:textSize="15sp"
+            android:textColor="#FFFFFF"
+            app:backgroundTint="#E96F88"
+            app:cornerRadius="20dp" />
+
+        <EditText
+            android:id="@+id/messageInput"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_weight="1"
+            android:layout_marginStart="10dp"
+            android:hint="כתוב הודעה..."
+            android:background="@drawable/input_background"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:textDirection="rtl"
+            android:singleLine="true" />
+
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/backButton"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:text="חזרה"
+        android:textSize="16sp"
+        android:textColor="#E96F88"
+        app:backgroundTint="#FFFFFF"
+        app:strokeColor="#E96F88"
+        app:strokeWidth="2dp"
+        app:cornerRadius="26dp" />
+
+</LinearLayout>

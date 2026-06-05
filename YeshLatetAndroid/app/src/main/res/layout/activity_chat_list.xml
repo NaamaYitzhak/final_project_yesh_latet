@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFF4F4"
+    android:padding="20dp"
+    android:layoutDirection="rtl">
+
+    <ImageView
+        android:id="@+id/logoImage"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/logo"
+        android:scaleType="fitCenter"
+        android:contentDescription="Logo" />
+
+    <TextView
+        android:id="@+id/titleText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="הצ׳אטים שלי"
+        android:textColor="#7A1E2C"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="14dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/refreshButton"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:text="רענון צ׳אטים"
+        android:textSize="16sp"
+        android:textColor="#FFFFFF"
+        app:backgroundTint="#E96F88"
+        app:cornerRadius="26dp"
+        android:layout_marginBottom="14dp" />
+
+    <ScrollView
+        android:id="@+id/chatsScroll"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true"
+        android:layout_marginBottom="14dp">
+
+        <LinearLayout
+            android:id="@+id/chatsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+
+    </ScrollView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/backButton"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:text="חזרה"
+        android:textSize="16sp"
+        android:textColor="#E96F88"
+        app:backgroundTint="#FFFFFF"
+        app:strokeColor="#E96F88"
+        app:strokeWidth="2dp"
+        app:cornerRadius="27dp" />
+
+</LinearLayout>
