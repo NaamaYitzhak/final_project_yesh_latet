@@ -37,7 +37,7 @@ public class LoginActivity extends AppCompatActivity {
         backButton = findViewById(R.id.backButton);
 
         // once clicked
-        loginButton.setOnClickListener(v -> login());
+        loginButton.setOnClickListener(v -> login());// when the login button is clicked it will call the login function
         backButton.setOnClickListener(v -> finish());
     }
 

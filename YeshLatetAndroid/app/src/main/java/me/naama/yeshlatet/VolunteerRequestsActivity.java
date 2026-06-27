@@ -52,7 +52,7 @@ public class VolunteerRequestsActivity extends AppCompatActivity {
 
         JsonObjectRequest request = new JsonObjectRequest(
                 Request.Method.GET,
-                BASE_URL + "/getFood",
+                BASE_URL + "/getVolunteerRequests",
                 null,
                 response -> {
                     requestsContainer.removeAllViews();
@@ -67,21 +67,14 @@ public class VolunteerRequestsActivity extends AppCompatActivity {
 
                         JSONArray data = response.getJSONArray("data");
 
-                        int count = 0;
+                        if (data.length() == 0) {
+                            addEmptyText("אין בקשות מתנדבים כרגע");
+                            return;
+                        }
 
                         for (int i = 0; i < data.length(); i++) {
                             JSONObject item = data.getJSONObject(i);
-
-                            String type = item.optString("type", "");
-                            // if the food type is a volunteer request.
-                            if (type.equals("VOLUNTEER_REQUEST")) {
-                                addRequestCard(item);
-                                count++;
-                            }
-                        }
-
-                        if (count == 0) {
-                            addEmptyText("אין בקשות מתנדבים כרגע");
+                            addRequestCard(item);
                         }
 
                     } catch (JSONException e) {
@@ -98,8 +91,8 @@ public class VolunteerRequestsActivity extends AppCompatActivity {
     }
 
     private void addRequestCard(JSONObject request) {
-        String charityUsername = request.optString("username", "לא צוין");
-        String content = request.optString("amount", "לא צוין");
+        String charityUsername = request.optString("charity_username", "לא צוין");
+        String content = request.optString("content", "לא צוין");
         String createdAt = request.optString("created_at", "לא צוין");
 
         LinearLayout card = new LinearLayout(this);

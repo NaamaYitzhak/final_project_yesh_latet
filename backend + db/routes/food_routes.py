@@ -58,6 +58,7 @@ def submit_food():
         return jsonify({"status": "success", "message": "Food submitted"})
 
     except pymysql.err.Error as e:
+        print(str(e))
         return jsonify({"status": "error", "message": str(e)}), 500
 
     finally:

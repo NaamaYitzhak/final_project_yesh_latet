@@ -42,7 +42,7 @@ public class FoodListActivity extends AppCompatActivity {
         loadFood();
     }
 
-    private void loadFood() {
+    private void loadFood() { //
         foodContainer.removeAllViews();
 
         TextView loadingText = new TextView(this);
@@ -77,11 +77,7 @@ public class FoodListActivity extends AppCompatActivity {
                         for (int i = 0; i < data.length(); i++) {
                             JSONObject food = data.getJSONObject(i);
 
-                            String type = food.optString("type", "");
-
-                            if (!type.equals("VOLUNTEER_REQUEST")) {
-                                addFoodCard(food);
-                            }
+                            addFoodCard(food);
                         }
 
                     } catch (JSONException e) {
@@ -108,7 +104,7 @@ public class FoodListActivity extends AppCompatActivity {
 
         foodContainer.addView(emptyText);
     }
-
+// adding the food card to the container, the container is within the scroll in the food_list.xml
     private void addFoodCard(JSONObject food) {
         String id = food.optString("id", "");
         String type = food.optString("type", "לא צוין");

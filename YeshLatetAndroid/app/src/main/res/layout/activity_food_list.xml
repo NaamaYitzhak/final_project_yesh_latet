@@ -48,7 +48,7 @@
         app:layout_constraintBottom_toTopOf="@id/foodScroll"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
-
+    <!--Scroll view to be able to scroll, LinearLayout for adding stuff.-->
     <ScrollView
         android:id="@+id/foodScroll"
         android:layout_width="0dp"

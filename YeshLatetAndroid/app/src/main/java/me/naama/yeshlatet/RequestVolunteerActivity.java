@@ -66,8 +66,7 @@ public class RequestVolunteerActivity extends AppCompatActivity {
 
         try {
             body.put("username", username);
-            body.put("type", "VOLUNTEER_REQUEST");
-            body.put("amount", content);
+            body.put("content", content);
             body.put("created_at", createdAt);
         } catch (JSONException e) {
             Toast.makeText(this, "שגיאה ביצירת בקשה", Toast.LENGTH_SHORT).show();
@@ -76,7 +75,7 @@ public class RequestVolunteerActivity extends AppCompatActivity {
 
         JsonObjectRequest request = new JsonObjectRequest(
                 Request.Method.POST,
-                BASE_URL + "/submitFood", // in the same route with adding food.
+                BASE_URL + "/submitVolunteerRequest", // in the same route with adding food.
                 body,
                 response -> {
                     Toast.makeText(this, "בקשת המתנדב פורסמה בהצלחה", Toast.LENGTH_SHORT).show();

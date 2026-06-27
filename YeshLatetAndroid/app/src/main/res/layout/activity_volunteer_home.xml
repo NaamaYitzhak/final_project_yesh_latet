@@ -50,16 +50,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <TextView
+    <WebView
         android:id="@+id/mapCard"
         android:layout_width="0dp"
         android:layout_height="170dp"
-        android:text="🗺️\nמשימות באזור"
-        android:textSize="24sp"
-        android:textColor="#5E2A2A"
-        android:gravity="center"
-        android:background="@drawable/card_background"
         android:layout_marginTop="24dp"
+        android:background="@drawable/card_background"
         app:layout_constraintTop_toBottomOf="@id/subtitleText"
         app:layout_constraintBottom_toTopOf="@id/foodListButton"
         app:layout_constraintStart_toStartOf="parent"
