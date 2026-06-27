@@ -24,7 +24,7 @@ public class ChatListActivity extends AppCompatActivity {
 
     private String currentUsername;
 
-    private LinearLayout chatsContainer;
+    private LinearLayout chatsContainer;// ui chat list
     private MaterialButton refreshButton;
     private MaterialButton backButton;
 
@@ -42,7 +42,7 @@ public class ChatListActivity extends AppCompatActivity {
         refreshButton.setOnClickListener(v -> loadChats());
         backButton.setOnClickListener(v -> finish());
 
-        loadChats();
+        loadChats(); // on first load of the page it will always load the chats.
     }
 
     private void loadChats() {
@@ -67,7 +67,7 @@ public class ChatListActivity extends AppCompatActivity {
 
         JsonObjectRequest request = new JsonObjectRequest(
                 Request.Method.POST,
-                BASE_URL + "/getChat",
+                BASE_URL + "/getChat", // asking the server to find all the chats from the db
                 body,
                 response -> {
                     chatsContainer.removeAllViews();
@@ -106,12 +106,13 @@ public class ChatListActivity extends AppCompatActivity {
     }
 
     private void addChatCard(JSONObject chat) {
+        // adding all the chats here because we cant get in the xml
         String chatId = chat.optString("chatId", "");
         String user1 = chat.optString("user1", "");
         String user2 = chat.optString("user2", "");
 
         String otherUsername;
-
+        // checking with current username to find out who is the other username (not me)
         if (user1.equals(currentUsername)) {
             otherUsername = user2;
         } else {

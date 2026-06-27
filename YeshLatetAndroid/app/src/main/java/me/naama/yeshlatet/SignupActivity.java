@@ -51,7 +51,7 @@ public class SignupActivity extends AppCompatActivity {
         String email = emailInput.getText().toString().trim();
         String password = passwordInput.getText().toString().trim();
 
-        int checkedId = typeRadioGroup.getCheckedRadioButtonId();
+        int checkedId = typeRadioGroup.getCheckedRadioButtonId();// the circle for the type
 
         if (username.isEmpty() || email.isEmpty() || password.isEmpty() || checkedId == -1) {
             Toast.makeText(this, "נא למלא את כל השדות", Toast.LENGTH_SHORT).show();

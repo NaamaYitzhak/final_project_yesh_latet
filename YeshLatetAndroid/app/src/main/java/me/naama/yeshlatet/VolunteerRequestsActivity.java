@@ -43,6 +43,7 @@ public class VolunteerRequestsActivity extends AppCompatActivity {
         backButton.setOnClickListener(v -> finish());
 
         loadRequests();
+        // loading all requests on first load
     }
 
     private void loadRequests() {
@@ -72,7 +73,7 @@ public class VolunteerRequestsActivity extends AppCompatActivity {
                             JSONObject item = data.getJSONObject(i);
 
                             String type = item.optString("type", "");
-
+                            // if the food type is a volunteer request.
                             if (type.equals("VOLUNTEER_REQUEST")) {
                                 addRequestCard(item);
                                 count++;

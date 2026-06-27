@@ -53,7 +53,7 @@ public class FoodListActivity extends AppCompatActivity {
         foodContainer.addView(loadingText);
 
         JsonObjectRequest request = new JsonObjectRequest(
-                Request.Method.GET,
+                Request.Method.GET, // get request because we get ALL the food.
                 BASE_URL + "/getFood",
                 null,
                 response -> {
@@ -148,6 +148,7 @@ public class FoodListActivity extends AppCompatActivity {
 
         card.addView(title);
         card.addView(details);
+        // if the food wasnt created by me
         if (currentUsername != null && !currentUsername.equals(businessUsername)) {
             MaterialButton chatButton = new MaterialButton(this);
             chatButton.setText("פתח צ׳אט עם העסק");

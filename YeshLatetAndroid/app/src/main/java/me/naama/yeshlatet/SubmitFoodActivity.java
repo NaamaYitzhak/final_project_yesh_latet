@@ -92,7 +92,7 @@ public class SubmitFoodActivity extends AppCompatActivity {
 
         JsonObjectRequest request = new JsonObjectRequest(
                 Request.Method.POST,
-                BASE_URL + "/submitFood",
+                BASE_URL + "/submitFood", // submit food route.
                 body,
                 response -> {
                     Toast.makeText(this, "התרומה פורסמה בהצלחה", Toast.LENGTH_SHORT).show();

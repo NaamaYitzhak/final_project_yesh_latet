@@ -44,6 +44,7 @@ public class RequestVolunteerActivity extends AppCompatActivity {
     }
 
     private void sendVolunteerRequest() {
+        // TODO - fix it :)
         String content = requestInput.getText().toString().trim();
 
         if (content.isEmpty()) {
@@ -75,7 +76,7 @@ public class RequestVolunteerActivity extends AppCompatActivity {
 
         JsonObjectRequest request = new JsonObjectRequest(
                 Request.Method.POST,
-                BASE_URL + "/submitFood",
+                BASE_URL + "/submitFood", // in the same route with adding food.
                 body,
                 response -> {
                     Toast.makeText(this, "בקשת המתנדב פורסמה בהצלחה", Toast.LENGTH_SHORT).show();

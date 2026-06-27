@@ -25,7 +25,7 @@ public class BusinessHomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_business_home);
 
-        username = getIntent().getStringExtra("username");
+        username = getIntent().getStringExtra("username");//getting from the extra
 
         titleText = findViewById(R.id.titleText);
         submitFoodButton = findViewById(R.id.submitFoodButton);
@@ -56,7 +56,7 @@ public class BusinessHomeActivity extends AppCompatActivity {
         });
         logoutButton.setOnClickListener(v -> {
             SessionManager sessionManager = new SessionManager(this);
-            sessionManager.logout();
+            sessionManager.logout(); // for not loogin back on auto
 
             Intent intent = new Intent(this, MainActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);

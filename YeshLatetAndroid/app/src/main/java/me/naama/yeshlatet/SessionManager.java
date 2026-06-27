@@ -5,7 +5,7 @@ import android.content.SharedPreferences;
 
 public class SessionManager {
 
-    private static final String PREF_NAME = "yesh_latet_session";
+    private static final String PREF_NAME = "yesh_latet_session"; // where do i save the information
     private static final String KEY_LOGGED_IN = "logged_in";
     private static final String KEY_USERNAME = "username";
     private static final String KEY_TYPE = "type";
@@ -14,7 +14,8 @@ public class SessionManager {
     private SharedPreferences.Editor editor;
 
     public SessionManager(Context context) {
-        prefs = context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
+        // set up the shared prefrences
+        prefs = context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE); // cant read it without the app
         editor = prefs.edit();
     }
 
@@ -39,6 +40,6 @@ public class SessionManager {
 
     public void logout() {
         editor.clear();
-        editor.apply();
+        editor.apply(); // save
     }
 }

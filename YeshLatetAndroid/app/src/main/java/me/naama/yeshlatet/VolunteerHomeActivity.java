@@ -55,7 +55,7 @@ public class VolunteerHomeActivity extends AppCompatActivity {
         });
         logoutButton.setOnClickListener(v -> {
             SessionManager sessionManager = new SessionManager(this);
-            sessionManager.logout();
+            sessionManager.logout(); // logout and clear the information
 
             Intent intent = new Intent(this, MainActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);

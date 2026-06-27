@@ -61,7 +61,7 @@ public class ChatActivity extends AppCompatActivity {
         refreshButton.setOnClickListener(v -> findChatAndLoadMessages());
         backButton.setOnClickListener(v -> finish());
 
-        findChatAndLoadMessages();
+        findChatAndLoadMessages(); // on first load will load the chat.
     }
 
     private void findChatAndLoadMessages() {
@@ -81,7 +81,7 @@ public class ChatActivity extends AppCompatActivity {
             Toast.makeText(this, "שגיאה ביצירת בקשה", Toast.LENGTH_SHORT).show();
             return;
         }
-
+        // checking the chat id again, for new chats (opening chats via food ads).
         JsonObjectRequest request = new JsonObjectRequest(
                 Request.Method.POST,
                 BASE_URL + "/getChat",
@@ -144,7 +144,7 @@ public class ChatActivity extends AppCompatActivity {
 
         JsonObjectRequest request = new JsonObjectRequest(
                 Request.Method.POST,
-                BASE_URL + "/getMessage",
+                BASE_URL + "/getMessage", // route to recieve all message from the selected chat
                 body,
                 response -> {
                     messagesContainer.removeAllViews();
@@ -216,6 +216,7 @@ public class ChatActivity extends AppCompatActivity {
     }
 
     private void addMessageBubble(JSONObject msg) {
+        //adding the mssages now because the messages arent in the xml
         String sender = msg.optString("username", "");
         String content = msg.optString("content", "");
 
